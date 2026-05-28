@@ -55,3 +55,19 @@ INSERT INTO Alunos (nome_aluno, nota_aluno) VALUES
 -- Inserir aluna Letícia com letras maiúsculas utilizando a função UPPER. --
 INSERT INTO Alunos (nome_aluno) VALUES
 (UPPER('Letícia'));
+
+-- 2) READ --
+
+-- Busque todos os alunos que possuem nota entre 6.0 e 8.5. --
+SELECT nome_aluno FROM Alunos 
+WHERE nota_aluno = 6.0 BETWEEN 8.5;
+
+-- Busque alunos que estão no curso de Matemática, Física ou Química. --
+SELECT nome_aluno FROM Alunos
+WHERE curso_aluno IN ('Matemática', 'Física', 'Química');
+
+-- Busque todos os alunos com nome que comecem com C --
+SELECT nome_aluno FROM Alunos
+WHERE nome_aluno LIKE 'C%';
+
+
