@@ -167,7 +167,7 @@ WHERE idade_aluno < 18;
 DELETE FROM Alunos
 WHERE nome_aluno = "Roberto";
 
---Delete alunos com nota igual a 0. --
+-- Delete alunos com nota igual a 0. --
 DELETE FROM Alunos
 WHERE nota_aluno = 0;
 
