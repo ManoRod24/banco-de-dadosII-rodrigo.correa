@@ -18,7 +18,7 @@ INSERT INTO Alunos (nome_aluno) VALUES
 
 -- Inserir aluno no curso de Desenvolvimento de Sistemas utilizando a função --
 --nativa do banco (como CURRENT_DATE ou NOW()) para preencher a data_matricula. --
-INSERT INTO Alunos (nome_aluno, curso_aluno, data_aluno) VALUES
+INSERT INTO Alunos (nome_aluno, curso_aluno, data_matricula) VALUES
 ('Danilo', 'Desenvolvimento de Sistemas', CURRENT_DATE);
 
 -- Inserir aluna Camila informando apenas o nome do curso. Colunas idade, 
@@ -64,7 +64,7 @@ INSERT INTO Alunos (nome_aluno) VALUES
 
 -- Busque todos os alunos que possuem nota entre 6.0 e 8.5. --
 SELECT nome_aluno FROM Alunos 
-WHERE nota_aluno = 6.0 BETWEEN 8.5;
+WHERE nota_aluno BETWEEN 6.0 AND 8.5;
 
 -- Busque alunos que estão no curso de Matemática, Física ou Química. --
 SELECT nome_aluno FROM Alunos
@@ -76,7 +76,7 @@ WHERE nome_aluno LIKE 'C%';
 
 -- Busque todos os alunos com Silva em qualquer parte do nome. --
 SELECT nome_aluno FROM Alunos
-WHERE nome_aluno LIKE '%Silva';
+WHERE nome_aluno LIKE '%Silva%';
 
 -- Busque todos os alunos com notas com status NULL. --
 SELECT nome_aluno, idade_aluno, curso_aluno FROM Alunos
@@ -115,7 +115,7 @@ WHERE curso_aluno = 'Banco de Dados';
 -- mude para Trancado, todos os alunos com nota menor que 4.0 e com mais de 18 anos. --
 UPDATE Alunos
 SET status_matricula = 'Trancado'
-WHERE nota_aluno < 4, idade_aluno > 18;
+WHERE nota_aluno < 4 AND idade_aluno > 18;
 
 -- Mude curso para Desenvolvimento de Sistemas e nota 9.0, o aluno com id igual a 12. --
 UPDATE Alunos
@@ -134,22 +134,22 @@ WHERE status_matricula = 'Trancado';
 
 -- Mudar o nome de todos os alunos do curso de História, deixando em minúsculo. --
 UPDATE Alunos
-SET LOWER(nome_aluno)
+SET nome_aluno = LOWER(nome_aluno)
 WHERE curso_aluno = 'História';
 
 -- Subtraia 5.0 da nota de quem está no curso de Física ou Química. --
 UPDATE Alunos
 SET nota_aluno = nota_aluno - 5.0
-WHERE curso_aluno = 'Física' OR 'História';
+WHERE curso_aluno IN ('Física', 'Química');
 
 -- Mudar status para Concluído todos os aluno com data de matrícula anterior a 2025-01-01. --
 UPDATE Alunos
 SET status_matricula = 'Concluído'
-WHERE data_matricula < 2025-01-01;
+WHERE data_matricula < '2025-01-01';
 
 -- Mudar nome do aluno com id igual a 3 adicionando Representante no final do nome. --
 UPDATE Alunos
-SET nome_aluno = CONCAT(nome_aluno, 'Representante')
+SET nome_aluno = CONCAT(nome_aluno, ' Representante')
 WHERE id_aluno = 3;
 
 -- Mudar nota para 10.0 a nota de todos os alunos com nota maior que 10.0 --
@@ -169,7 +169,7 @@ WHERE nome_aluno LIKE '%Junior';
 
 -- Delete os alunos com id igual a 4, 8, e 15. --
 DELETE FROM Alunos
-WHERE id_aluno = IN(4, 8, 15);
+WHERE id_aluno IN (4, 8, 15);
 
 -- Delete todos os alunos que possuem curso NULL. --
 DELETE FROM Alunos
@@ -177,7 +177,7 @@ WHERE curso_aluno IS NULL;
 
 -- Delete todos os alunos com idade entre 30 e 40 anos. --
 DELETE FROM Alunos
-WHERE idade_aluno = 30 BETWEEN 40;
+WHERE idade_aluno  BETWEEN 30 AND 40;
 
 -- Delete todos os alunos do curso de Geografia com status Trancado. --
 DELETE FROM Alunos
@@ -197,7 +197,7 @@ WHERE nome_aluno LIKE '%Teste';
 
 -- Delete todos os alunos com idade menor que 16 e data de matrícula do ano vigente.  --
 DELETE FROM Alunos
-WHERE idade_aluno = 16 AND YEAR(data_matricula) = YEAR(CURDATE());
+WHERE idade_aluno < 16 AND YEAR(data_matricula) = YEAR(CURDATE());
 
 -- Delete todos os alunos com nota 0.0 ou status da matrícula NULL. --
 DELETE FROM Alunos 
@@ -220,12 +220,13 @@ GROUP BY curso_aluno HAVING AVG(nota_aluno) < 7.0;
  UPDATE Alunos
  SET status_matricula = CASE
  WHEN nota_aluno >= 6.0 THEN 'Concluido'
- ELSE 'Retido';
+ ELSE 'Retido'
+ END;
 
  -- A limpeza de inconsistências --
  DELETE FROM Alunos
  WHERE nota_aluno IS NULL 
- AND curso_aluno = ( 
+ AND curso_aluno IN ( 
     SELECT curso_aluno FROM Alunos WHERE nome_aluno = 'João'
     );
 
