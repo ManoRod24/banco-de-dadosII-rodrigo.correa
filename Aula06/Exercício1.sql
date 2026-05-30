@@ -208,4 +208,4 @@ WHERE curso_aluno = "Artes" OR nota_aluno = 0.0;
 SELECT nome_aluno, idade_aluno FROM Alunos
 ORDER BY idade_aluno DESC LIMIT 3;
 
--- Rodrigo Correa do Nascimento - 21/05/26 - Exercícios CRUD - Camargo Aranha --
+-- Rodrigo Correa do Nascimento - 21/05/26 - Exercícios CRUD - Camargo Aranha. --
