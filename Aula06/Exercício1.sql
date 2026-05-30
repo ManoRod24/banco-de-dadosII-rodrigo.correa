@@ -26,7 +26,7 @@ INSERT INTO Alunos (nome_aluno, curso_aluno) VALUES
 ('Carlos', 'Física');
 
 -- Adicionar Fernanda de 21 anos com nota 10. --
-INSERT INTO Alunos (nome_aluno, idade_aluno, nota_aluno) 	VALUES
+INSERT INTO Alunos (nome_aluno, idade_aluno, nota_aluno) VALUES
 ('Fernanda', 21, 10.0);
 
 -- Adicionar Roberto de 18 anos do curso de Geografia. --
@@ -44,6 +44,10 @@ INSERT INTO Alunos (nome_aluno, curso_aluno, nota_aluno) VALUES
 -- Adiconar Rafael de 30 anos do curso de Artes com noa 6. --
 INSERT INTO Alunos (nome_aluno, idade_aluno, curso_aluno, nota_aluno) VALUES
 ('Rafael', 30, 'Artes', 6.0);
+
+-- Rodrigo Correa do Nascimento - 21/05/26 - Exercícios CRUD - Camargo Aranha --
+
+
 
 -- 2) 10 READS --
 
@@ -84,6 +88,10 @@ WHERE nota_aluno = 10;
 -- Buscar todos os alunos com o nome Ana. --
 SELECT nome_aluno FROM Alunos
 WHERE nome_aluno ="Ana";
+
+-- Rodrigo Correa do Nascimento - 21/05/26 - Exercícios CRUD - Camargo Aranha --
+
+
 
 -- 3) UPDATES --
 
@@ -137,6 +145,10 @@ UPDATE Alunos
 SET curso_aluno = "Ciências da Computação"
 WHERE id_aluno = 2;
 
+-- Rodrigo Correa do Nascimento - 21/05/26 - Exercícios CRUD - Camargo Aranha --
+
+
+
 -- 4) DELETE --
 
 -- Delete o aluno que possui id igual a 10. --
@@ -167,7 +179,7 @@ WHERE idade_aluno < 18;
 DELETE FROM Alunos
 WHERE nome_aluno = "Roberto";
 
--- Delete alunos com nota igual a 0. --
+--Delete alunos com nota igual a 0. --
 DELETE FROM Alunos
 WHERE nota_aluno = 0;
 
@@ -178,3 +190,22 @@ WHERE id_aluno = 15;
 -- Deletar todos os aluno do curso de História com nota menor que 6.0. --
 DELETE FROM Alunos
 WHERE curso_aluno = "História" AND nota_aluno < 6.0;
+
+-- Rodrigo Correa do Nascimento - 21/05/26 - Exercícios CRUD - Camargo Aranha --
+
+-- DESAFIOS --
+
+-- Bônus de fim de semestre --
+UPDATE Alunos
+SET nota_aluno = nota_aluno + 1.5
+WHERE curso_aluno = 'Física' AND nota_aluno < 7.0;
+
+-- A faxina do Sistema --
+DELETE FROM Alunos
+WHERE curso_aluno = "Artes" OR nota_aluno = 0.0;
+
+-- O pódio dos veteranos --
+SELECT nome_aluno, idade_aluno FROM Alunos
+ORDER BY idade_aluno DESC LIMIT 3;
+
+-- Rodrigo Correa do Nascimento - 21/05/26 - Exercícios CRUD - Camargo Aranha --
