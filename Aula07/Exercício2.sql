@@ -230,4 +230,4 @@ GROUP BY curso_aluno HAVING AVG(nota_aluno) < 7.0;
     SELECT curso_aluno FROM Alunos WHERE nome_aluno = 'João'
     );
 
--- Rodrigo Correa do Nascimento - 26/05/26 - Exercícios CRUD - Camargo Aranha. --
+-- Rodrigo Correa do Nascimento - 26/05/26 - Exercícios CRUD - Camargo Aranha --
