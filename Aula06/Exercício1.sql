@@ -115,7 +115,7 @@ UPDATE Alunos
 SET nota_aluno = 8.0
 WHERE curso_aluno = "Física";
 
--- Mudar o nome do aluno com id 4 para Ana Carolina. --
+-- Mudar o nome do aluno com id 4 para Ana Carolina . --
 UPDATE Alunos
 SET nome_aluno = "Ana Carolina"
 WHERE id_aluno = 4;
