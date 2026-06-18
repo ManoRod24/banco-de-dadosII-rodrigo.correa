@@ -33,10 +33,6 @@ INSERT INTO Alunos (nome_aluno, idade_aluno, nota_aluno) VALUES
 INSERT INTO Alunos (nome_aluno, idade_aluno, curso_aluno) VALUES
 ('Roberto', 18, 'Geografia');
 
--- Adicionar João de 25 anos. --
-INSERT INTO Alunos (id_aluno, nome_aluno, idade_aluno) VALUES
-(100, 'João', 25);
-
 -- Adicionar Beatriz do curso de Química com nota 7.5. --
 INSERT INTO Alunos (nome_aluno, curso_aluno, nota_aluno) VALUES
 ('Beatriz', 'Química', 7.5);
@@ -44,6 +40,10 @@ INSERT INTO Alunos (nome_aluno, curso_aluno, nota_aluno) VALUES
 -- Adiconar Rafael de 30 anos do curso de Artes com noa 6. --
 INSERT INTO Alunos (nome_aluno, idade_aluno, curso_aluno, nota_aluno) VALUES
 ('Rafael', 30, 'Artes', 6.0);
+
+-- Adicionar João de 25 anos com ID igual a 100. --
+INSERT INTO Alunos (id_aluno, nome_aluno, idade_aluno) VALUES
+(100, 'João', 25);
 
 -- Rodrigo Correa do Nascimento - 21/05/26 - Exercícios CRUD - Camargo Aranha --
 
@@ -179,7 +179,7 @@ WHERE idade_aluno < 18;
 DELETE FROM Alunos
 WHERE nome_aluno = "Roberto";
 
---Delete alunos com nota igual a 0. --
+-- Delete alunos com nota igual a 0. --
 DELETE FROM Alunos
 WHERE nota_aluno = 0;
 
