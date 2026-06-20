@@ -39,7 +39,8 @@ INSERT INTO Fornecedores (nome, CNPJ, localizacao) VALUES
 ('Tech Supply', 20408594000171, 'Belo Horizonte-PE');
 
 -- 10 --
-INSERT INTO Esportes ()
+INSERT INTO Categorias (nome, descricao) VALUES
+('Esportes', 'Produtos da categoria Esportes em geral');
 
 -- 11 --
 INSERT INTO Clientes (nome, email, telefone, cidade, estado) VALUES
@@ -78,7 +79,8 @@ INSERT INTO Fornecedores (nome, CNPJ, localizacao) VALUES
 ('Tech Supply', 78107281000127, 'Rio de Janeiro-BA');
 
 -- 20 --
-INSERT INTO Ferramentas ()
+INSERT INTO Categorias (nome, descricao) VALUES
+('Ferramentas', 'Produtos da categoria Ferramentas em geral');
 
 -- 21 --
 INSERT INTO Clientes (nome, email, telefone, cidade, estado) VALUES
@@ -117,7 +119,8 @@ INSERT INTO Fornecedores (nome, CNPJ, localizacao) VALUES
 ('Tech Supply', 60521841000124, 'São Paulo-SP');
 
 -- 30 --
-INSERT INTO 
+INSERT INTO Categorias (nome, descricao) VALUES
+('Eletrônicos', 'Produtos da categoria Eletrônicos em geral');
 
 -- 31 --
 INSERT INTO Clientes (nome, email, telefone, cidade, estado);
@@ -156,7 +159,8 @@ INSERT INTO Fornecedores (nome, CNPJ, localizacao) VALUES
 ('Gama Ltda', .146.972/0001-37, 'Rio de Janeiro-RJ');
 
 -- 40 --
-INSERT INTO
+INSERT INTO Categorias (nome, descricao) VALUES
+('Eletrônicos', 'Produtos da categoria Eletrônicos em geral');
 
 -- 41 --
 INSERT INTO Clientes (nome, email, telefone, cidade, estado) VALUES
@@ -195,7 +199,8 @@ INSERT INTO Fornecedores (nome, CNPJ, localizacao) VALUES
 ('Tech Supply', 14854368000180, 'Belo Horizonte-MG');
 
 -- 50 --
-INSERT INTO 
+INSERT INTO Categorias (nome, descricao) VALUES
+('Alimentos', 'Produtos da categoria Alimentos em geral');
 
 -- Nivel Intermediário --
 
