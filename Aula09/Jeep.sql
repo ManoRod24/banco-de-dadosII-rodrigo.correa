@@ -1,7 +1,7 @@
 CREATE TABLE Veiculo (
     id_veiculo INT PRIMARY KEY AUTO_INCREMENT,
     modelo VARCHAR(100) NOT NULL,
-    ano_fabricacao INT NOT NULL,
+    ano_fabricacao YEAR NOT NULL,
     chassi VARCHAR(17) UNIQUE NOT NULL,
     carroceria VARCHAR(20) NOT NULL, -- (Ex: SUV, Sedan, Hatch)
     potencia_cavalos INT NOT NULL
@@ -22,7 +22,7 @@ CREATE TABLE Funcionario (
     cargo_func VARCHAR(100) NOT NULL,
     salario_func DECIMAL(10,2) NOT NULL,
     turno VARCHAR(20) NOT NULL,
-    quantidade_vendas INT NOT NULL
+    qtd_vendas INT NOT NULL
 );
 
 CREATE TABLE Venda (
