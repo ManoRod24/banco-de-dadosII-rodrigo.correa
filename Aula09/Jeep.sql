@@ -40,16 +40,17 @@ CREATE TABLE Venda (
     FOREIGN KEY(id_func) REFERENCES Funcionario(id_func)
 );
 
+-- Adicionando dados nas tabelas
 INSERT INTO Veiculo (modelo, ano_fabricacao, chassi, carroceria, potencia_cavalos) VALUES
 ('Jeep Renegade', 2016, '1gg384hf9484h927', 'SUV', 176);
 
 INSERT INTO Cliente (nome_completo, cpf, telefone_contato, data_compra, cidade_cliente) VALUES
-('Yuta Okkotsu', 83748291837, '+55 11 40028922', '2018-05-10', 'Kyoto');
+('Yuta Okkotsu', '83748291837', '+55 11 40028922', '2018-05-10', 'São Paulo');
 
 INSERT INTO Funcionario (nome_func, cargo_func, salario_func, turno, quantidade_vendas) VALUES
 ('Lamar', 'Vendedor', 4500.00, 'Manhã', 32);
 
 INSERT INTO Venda (id_cliente, id_veiculo, id_func, data_venda, valor_total, numero_parcelas, garantia_anos) VALUES
-(1, 1, 1, 2021-04-22, 130000.00, 50, 5);
+(1, 1, 1, '2021-04-22', 130000.00, 50, 5);
 
 -- Rodrigo Correa do Nascimento - Banco de Dados II - Etec Professor Camargo Aranha
